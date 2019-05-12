@@ -1,9 +1,14 @@
 export interface DiceConstructor<T> {
-    new(): Dice<T>;
+    new(): DiceOf<T>;
 }
 
-export interface Dice<T> {
+export interface Dice {
+    getKey(): string;
+    getName(): string;
+}
+
+export interface DiceOf<T> extends Dice {
     getSides(): T[];
 }
 
-export interface DiceKinds { [key: string]: DiceConstructor<any> }
+export interface DiceKinds { [key: string]: DiceOf<any> }

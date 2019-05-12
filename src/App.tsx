@@ -1,13 +1,16 @@
 import React from 'react';
 import './App.css';
-import { DiceChooser } from "./UI/DiceChooser";
+import './common.css';
+import { View } from "./UI/View";
 
 const App: React.FC = () => {
   return (
     <div className="App">
-      <DiceChooser />
+      <View />
     </div>
   );
+
+
 }
 
 export default App;

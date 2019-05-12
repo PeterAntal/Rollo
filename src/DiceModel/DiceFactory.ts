@@ -20,7 +20,8 @@ export class DiceFactory {
         return this.diceKinds;
     }
 
-    public RegisterDice(dice: DiceConstructor<any>) {
-        this.diceKinds[dice.name] = dice;
+    public RegisterDice(constructor: DiceConstructor<any>) {
+        const dice = new constructor();
+        this.diceKinds[dice.getKey()] = dice;
     }
 }

@@ -1,6 +1,10 @@
-import { Dice } from "./IDice";
+import { DiceOf } from "./IDice";
 
-export class D6 implements Dice<number>{
+export class D6 implements DiceOf<number>{
+    getKey(): string {
+        return "D6";
+    }
+
     getName(): string {
         return "Six Sided Die";
     }
