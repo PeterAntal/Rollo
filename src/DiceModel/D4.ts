@@ -1,15 +1,15 @@
 import { DiceBase } from "./DiceBase";
 
-export class D6 extends DiceBase<number> {
+export class D4 extends DiceBase<number> {
     getKey(): string {
-        return "D6";
+        return "D4";
     }
 
     getName(): string {
-        return "Six Sided Die";
+        return "Four Sided Die";
     }
 
     getSides(): number[] {
-        return [1, 2, 3, 4, 5, 6];
+        return [1, 2, 3, 4];
     }
 }

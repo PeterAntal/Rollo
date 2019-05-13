@@ -1,5 +1,7 @@
+import { RandomSeed } from "random-seed";
+
 export interface DiceConstructor<T> {
-    new(): DiceOf<T>;
+    new (): DiceOf<T>;
 }
 
 export interface Dice {
@@ -9,6 +11,9 @@ export interface Dice {
 
 export interface DiceOf<T> extends Dice {
     getSides(): T[];
+    roll(randomSeed: RandomSeed): T;
 }
 
-export interface DiceKinds { [key: string]: DiceOf<any> }
+export interface DiceKinds {
+    [key: string]: DiceOf<any>;
+}
