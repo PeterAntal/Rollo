@@ -1,6 +1,6 @@
 import React from "react";
 
-import { DiceFactory, DiceKinds, Dice, DiceOf } from "../DiceModel/index";
+import { DiceFactory, DiceKinds, Dice } from "../DiceModel/index";
 import {
     ComboBox,
     IComboBox,
@@ -51,11 +51,11 @@ export class DiceCombo extends React.Component<DiceComboProps> {
 }
 
 export interface DicePickerProps {
-    onAdd(dice: DiceOf<any>): void;
+    onAdd(dice: Dice): void;
 }
 interface DicePickerState {
     dice: DiceKinds;
-    selected?: DiceOf<any>;
+    selected?: Dice;
 }
 
 export class DicePicker extends React.Component<

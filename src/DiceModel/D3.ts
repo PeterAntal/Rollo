@@ -1,15 +1,15 @@
 import { NumericDice } from "./DiceBase";
 
-export class D100 extends NumericDice {
+export class D3 extends NumericDice {
     getKey(): string {
-        return "D100";
+        return "D3";
     }
 
     getName(): string {
-        return "Hundred Sided Die";
+        return "Three Sided Die";
     }
 
     getFaceCount(): number {
-        return 100;
+        return 3;
     }
 }

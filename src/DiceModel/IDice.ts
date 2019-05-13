@@ -1,19 +1,20 @@
 import { RandomSeed } from "random-seed";
 
 export interface DiceConstructor<T> {
-    new (): DiceOf<T>;
+    new (): Dice;
+}
+
+export interface Face {
+    [kind: string]: number;
 }
 
 export interface Dice {
     getKey(): string;
     getName(): string;
-}
-
-export interface DiceOf<T> extends Dice {
-    getSides(): T[];
-    roll(randomSeed: RandomSeed): T;
+    getSides(): Face[];
+    roll(randomSeed: RandomSeed): Face;
 }
 
 export interface DiceKinds {
-    [key: string]: DiceOf<any>;
+    [key: string]: Dice;
 }

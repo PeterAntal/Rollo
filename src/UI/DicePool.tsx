@@ -1,5 +1,5 @@
 import React from "react";
-import { Dice, DiceOf } from "../DiceModel/index";
+import { Dice } from "../DiceModel/index";
 import { DiceComponent } from "./DiceComponent";
 import "./DicePool.css";
 
@@ -13,7 +13,7 @@ export class DicePool extends React.Component<DicePoolProps> {
         this.props.activeDice.forEach((item, index) => {
             content.push(
                 <DiceComponent
-                    dice={item as DiceOf<any>}
+                    dice={item}
                     key={index}
                     index={index}
                     remove={this.props.onRemove}

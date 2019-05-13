@@ -1,6 +1,6 @@
-import { DiceBase } from "./DiceBase";
+import { NumericDice } from "./DiceBase";
 
-export class D12 extends DiceBase<number> {
+export class D12 extends NumericDice {
     getKey(): string {
         return "D12";
     }
@@ -9,11 +9,7 @@ export class D12 extends DiceBase<number> {
         return "Twelve Sided Die";
     }
 
-    getSides(): number[] {
-        const set = [];
-        for (let i = 1; i < 12; i++) {
-            set.push(i);
-        }
-        return set;
+    getFaceCount(): number {
+        return 12;
     }
 }

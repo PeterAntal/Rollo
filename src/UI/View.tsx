@@ -34,7 +34,7 @@ export class View extends React.Component<any, ViewState> {
                 <ProbabilitiesView
                     activeDice={this.state.activeDice as any}
                     randomSeed={this.state.randomSeed}
-                    iterations={10000 * (this.state.activeDice.length + 1)}
+                    iterations={50000}
                 />
             </>
         );

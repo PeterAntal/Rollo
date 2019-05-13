@@ -1,9 +1,9 @@
 import React from "react";
-import { DiceOf } from "../DiceModel/index";
+import { Dice } from "../DiceModel/index";
 import { IconButton, getTheme } from "office-ui-fabric-react/lib/index";
 
 interface DiceComponentProps {
-    dice: DiceOf<any>;
+    dice: Dice;
     index: number;
     remove: (index: number) => void;
 }

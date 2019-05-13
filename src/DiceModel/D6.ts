@@ -1,6 +1,6 @@
-import { DiceBase } from "./DiceBase";
+import { NumericDice } from "./DiceBase";
 
-export class D6 extends DiceBase<number> {
+export class D6 extends NumericDice {
     getKey(): string {
         return "D6";
     }
@@ -9,7 +9,7 @@ export class D6 extends DiceBase<number> {
         return "Six Sided Die";
     }
 
-    getSides(): number[] {
-        return [1, 2, 3, 4, 5, 6];
+    getFaceCount(): number {
+        return 6;
     }
 }

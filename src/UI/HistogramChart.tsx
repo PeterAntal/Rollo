@@ -48,11 +48,17 @@ export class HistogramChart extends React.Component<HistogramChartProps> {
                         id: "A",
                         type: "linear",
                         position: "left",
+                        ticks: {
+                            min: 0,
+                        },
                     },
                     {
                         id: "B",
                         type: "linear",
                         position: "right",
+                        ticks: {
+                            min: 0,
+                        },
                     },
                 ],
             },
