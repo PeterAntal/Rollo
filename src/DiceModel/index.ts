@@ -6,7 +6,7 @@ import { D8 } from "./D8";
 import { D10 } from "./D10";
 import { D20 } from "./D20";
 import { D100 } from "./D100";
-import { SWRPG_Purple } from "./SWRPG";
+import { SWRPG_Purple, SWRPG_Green, SWRPG_Yellow } from "./SWRPG";
 import { DiceFactory } from "./DiceFactory";
 
 export { DiceFactory };
@@ -22,3 +22,5 @@ DiceFactory.getInstance().RegisterDice(D20);
 DiceFactory.getInstance().RegisterDice(D100);
 
 DiceFactory.getInstance().RegisterDice(SWRPG_Purple);
+DiceFactory.getInstance().RegisterDice(SWRPG_Green);
+DiceFactory.getInstance().RegisterDice(SWRPG_Yellow);

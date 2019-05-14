@@ -9,16 +9,20 @@ export class HistogramChart extends React.Component<HistogramChartProps> {
     public render(): JSX.Element {
         const labels = [];
         const datasets = [];
-        const values = [];
-        const accum = [];
+        const values: number[] = [];
+        const accum: number[] = [];
 
         let accumulator = 0;
 
-        for (let i = 0; i < this.props.items.length; i++) {
+        const keys = Object.keys(this.props.items).sort((a, b) => {
+            return parseInt(a) - parseInt(b);
+        });
+        for (const i of keys) {
             labels.push(i + "");
+            const j = parseInt(i);
             const value =
-                this.props.items[i] != null
-                    ? this.props.items[i] / this.props.iterations
+                this.props.items[j] != null
+                    ? this.props.items[j] / this.props.iterations
                     : 0;
             accumulator += value;
             values.push(value);
@@ -26,14 +30,14 @@ export class HistogramChart extends React.Component<HistogramChartProps> {
         }
 
         datasets.push({
-            label: "My First dataset",
+            label: "Probability",
             data: values,
             yAxisID: "A",
             backgroundColor: "rgb(200, 200, 255)",
             borderColor: "rgb(128, 128, 128)",
         });
         datasets.push({
-            label: "My Second dataset",
+            label: "CDF",
             data: accum,
             yAxisID: "B",
             type: "line",
@@ -64,7 +68,7 @@ export class HistogramChart extends React.Component<HistogramChartProps> {
             },
         } as any;
         return (
-            <div style={{ height: "500px" }}>
+            <div style={{ height: "250px" }}>
                 <Bar
                     options={chartOptions}
                     data={{

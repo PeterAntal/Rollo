@@ -154,7 +154,6 @@ export class ProbabilitiesView extends React.Component<
                 histogram[iterationTotal]++;
             }
         }
-
         return histogram;
     }
 
