@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Rollo/precache-manifest.239b7afa6096dc29b657b486f58fbd93.js"
+  "/Rollo/precache-manifest.12d36069d12a16cd7951273eb9252f5c.js"
 );
 
 self.addEventListener('message', (event) => {
