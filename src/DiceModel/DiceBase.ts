@@ -6,6 +6,14 @@ export abstract class DiceBase implements Dice {
     public abstract getName(): string;
     public abstract getSides(): Face[];
 
+    public getBackgroundColor(): string {
+        return "white";
+    }
+
+    public getForegroundColor(): string {
+        return "black";
+    }
+
     public roll(randomSeed: RandomSeed): Face {
         const options = this.getSides();
         const selection = randomSeed.range(options.length);

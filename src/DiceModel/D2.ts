@@ -13,10 +13,10 @@ export class D2 extends DiceBase {
     public getSides(): Face[] {
         const set: Face[] = [
             {
-                number: 0,
+                value: 0,
             },
             {
-                number: 1,
+                value: 1,
             },
         ];
         return set;

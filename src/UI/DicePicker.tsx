@@ -33,7 +33,7 @@ export class DiceCombo extends React.Component<DiceComboProps> {
             if (this.props.diceKinds.hasOwnProperty(key)) {
                 results.push({
                     key: key,
-                    text: key,
+                    text: this.props.diceKinds[key].getName(),
                 });
             }
         }

@@ -13,6 +13,8 @@ export interface Dice {
     getName(): string;
     getSides(): Face[];
     roll(randomSeed: RandomSeed): Face;
+    getBackgroundColor(): string;
+    getForegroundColor(): string;
 }
 
 export interface DiceKinds {

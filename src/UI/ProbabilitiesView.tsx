@@ -1,7 +1,6 @@
 import React from "react";
 import { Dice, Face } from "../DiceModel/index";
 import { RandomSeed } from "random-seed";
-import { PrimaryButton } from "office-ui-fabric-react";
 import { HistogramChart } from "./HistogramChart";
 
 interface ProbabilitiesViewProps {
@@ -46,12 +45,7 @@ export class ProbabilitiesView extends React.Component<
     }
 
     public render(): JSX.Element {
-        return (
-            <>
-                {this.state.histograms && this.renderCharts()}
-                <PrimaryButton onClick={this.onClick} text="Generate" />
-            </>
-        );
+        return <>{this.state.histograms && this.renderCharts()}</>;
     }
 
     private renderCharts(): JSX.Element[] {
@@ -75,10 +69,6 @@ export class ProbabilitiesView extends React.Component<
 
         return elements;
     }
-
-    private onClick = (): void => {
-        this.regenerate();
-    };
 
     private regenerate() {
         const iterations = [];
