@@ -3,7 +3,7 @@ import { Face, Dice } from "../DiceModel/IDice";
 import { mapGlyph } from "../DiceModel/DieGlyphs";
 import "./DiceResult.css";
 import { css } from "@uifabric/utilities";
-import { IconButton, getTheme } from "office-ui-fabric-react/lib/index";
+import { IconButton } from "office-ui-fabric-react/lib/index";
 
 interface DiceResultProps {
     id: number;
@@ -41,7 +41,7 @@ export class DiceResult extends React.Component<DiceResultProps> {
                 const count = this.props.face[key];
 
                 const faceSize =
-                    itemCount == 1 && Math.abs(count) === 1
+                    itemCount === 1 && Math.abs(count) === 1
                         ? "large-face"
                         : "small-face";
 

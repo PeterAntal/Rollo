@@ -50,7 +50,7 @@ function repeat(element: JSX.Element, count: number): JSX.Element {
     const result = [];
     for (let i = 0; i < count; i++) {
         result.push(element);
-        if (i != count - 1) {
+        if (i !== count - 1) {
             result.push(<br />);
         }
     }

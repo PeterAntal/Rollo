@@ -5,6 +5,12 @@ import { DiceResult } from "./DiceResult";
 import { PrimaryButton } from "office-ui-fabric-react";
 import "./DiceRoll.css";
 
+import {
+    RollOutcome,
+    getValuesOfDimension,
+    getDimensions,
+} from "../DiceModel/RollingModel";
+
 interface DiceRollProps {
     activeDice: Dice[];
     randomSeed: RandomSeed;
@@ -43,11 +49,39 @@ export class DiceRoll extends React.Component<DiceRollProps, DiceRollState> {
         return (
             <>
                 <div className="dice-roll flex-row">{content}</div>
+                {this.outcome()}
 
                 {this.props.activeDice.length > 0 && (
                     <PrimaryButton onClick={this.onClick} text="Re-Roll" />
                 )}
             </>
+        );
+    }
+
+    private outcome(): JSX.Element {
+        const outcome: RollOutcome = {
+            rollOutCome: this.state.faces,
+        };
+
+        const dimensions = getDimensions([outcome]);
+        const results = [];
+        for (let dimension = 0; dimension < dimensions.length; dimension++) {
+            const dimensionName = dimensions[dimension];
+            results.push(
+                <div>
+                    <span>{dimensionName} </span>
+                    <span>
+                        {getValuesOfDimension(this.state.faces, dimensionName)}
+                    </span>
+                </div>
+            );
+        }
+        return (
+            <div>
+                <br />
+                Outcomes:{results}
+                <br />
+            </div>
         );
     }
 

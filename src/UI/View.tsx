@@ -1,7 +1,6 @@
 import React from "react";
 import { DicePicker } from "./DicePicker";
 import { Dice } from "../DiceModel/index";
-import { DicePool } from "./DicePool";
 import { DiceRoll } from "./DiceRoll";
 import { ProbabilitiesView } from "./ProbabilitiesView";
 import { RandomSeed, create } from "random-seed";
@@ -23,10 +22,6 @@ export class View extends React.Component<any, ViewState> {
         return (
             <>
                 <DicePicker onAdd={this.onAddDice} />
-                {/* <DicePool
-                    activeDice={this.state.activeDice}
-                    onRemove={this.onRemoveDice}
-                /> */}
                 <DiceRoll
                     activeDice={this.state.activeDice as any}
                     randomSeed={this.state.randomSeed}
