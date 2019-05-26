@@ -46,6 +46,7 @@ export class HistogramChart extends React.Component<HistogramChartProps> {
         });
         const chartOptions = {
             maintainAspectRatio: false,
+            animation: false,
             scales: {
                 yAxes: [
                     {
@@ -66,7 +67,7 @@ export class HistogramChart extends React.Component<HistogramChartProps> {
                     },
                 ],
             },
-        } as any;
+        } as Chart.ChartOptions;
         return (
             <div style={{ height: "250px" }}>
                 <Bar

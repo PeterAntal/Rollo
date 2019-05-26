@@ -1,0 +1,36 @@
+@font-face {
+    font-family: SW_Symbols;
+    src: url("sw_symbols.otf");
+}
+
+.die-glyph:after {
+    font-family: SW_Symbols;
+    font-style: normal;
+    -webkit-text-stroke-width: 0;
+    -webkit-text-stroke-color: none;
+}
+
+.die-glyph.success:after {
+    content: "s";
+}
+.die-glyph.failure:after {
+    content: "f";
+}
+.die-glyph.advantage:after {
+    content: "a";
+}
+.die-glyph.disadvantage:after {
+    content: "t";
+}
+.die-glyph.triumph:after {
+    content: "x";
+}
+.die-glyph.despair:after {
+    content: "y";
+}
+.die-glyph.light-side:after {
+    content: "Z";
+}
+.die-glyph.dark-side:after {
+    content: "z";
+}

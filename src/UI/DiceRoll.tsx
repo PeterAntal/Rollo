@@ -8,6 +8,7 @@ import "./DiceRoll.css";
 interface DiceRollProps {
     activeDice: Dice[];
     randomSeed: RandomSeed;
+    onRemove: (index: number) => void;
 }
 
 export interface DiceRollState {
@@ -34,6 +35,8 @@ export class DiceRoll extends React.Component<DiceRollProps, DiceRollState> {
                     face={this.state.faces[index]}
                     dice={this.props.activeDice[index]}
                     key={index}
+                    id={index}
+                    onClick={this.props.onRemove}
                 />
             );
         });
@@ -42,7 +45,7 @@ export class DiceRoll extends React.Component<DiceRollProps, DiceRollState> {
                 <div className="dice-roll flex-row">{content}</div>
 
                 {this.props.activeDice.length > 0 && (
-                    <PrimaryButton onClick={this.onClick} text="Generate" />
+                    <PrimaryButton onClick={this.onClick} text="Re-Roll" />
                 )}
             </>
         );

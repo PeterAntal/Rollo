@@ -7,11 +7,15 @@ export class SWRPG_Difficulty extends DiceBase {
     }
 
     getName(): string {
-        return "SWRPG_Difficulty";
+        return "SWRPG - Difficulty";
     }
 
     public getBackgroundColor(): string {
-        return "purple";
+        return "#8800AA";
+    }
+
+    public getShape(): string {
+        return "triangle";
     }
 
     public getSides(): Face[] {
@@ -54,7 +58,11 @@ export class SWRPG_Ability extends DiceBase {
     }
 
     public getBackgroundColor(): string {
-        return "green";
+        return "#00D400";
+    }
+
+    public getShape(): string {
+        return "triangle";
     }
 
     public getSides(): Face[] {
@@ -97,7 +105,11 @@ export class SWRPG_Proficiency extends DiceBase {
     }
 
     public getBackgroundColor(): string {
-        return "yellow";
+        return "#FFEA01";
+    }
+
+    public getShape(): string {
+        return "pentagon";
     }
 
     public getSides(): Face[] {
@@ -157,6 +169,10 @@ export class SWRPG_Challenge extends DiceBase {
         return "red";
     }
 
+    public getShape(): string {
+        return "pentagon";
+    }
+
     public getSides(): Face[] {
         const set: Face[] = [
             {
@@ -209,6 +225,14 @@ export class SWRPG_Force extends DiceBase {
         return "SWRPG - Force";
     }
 
+    public getShape(): string {
+        return "pentagon";
+    }
+
+    public getBackgroundColor(): string {
+        return "#EFEFEF";
+    }
+
     public getSides(): Face[] {
         const set: Face[] = [
             {
@@ -258,7 +282,7 @@ export class SWRPG_Setback extends DiceBase {
     }
 
     getName(): string {
-        return "SWRPG_Setback";
+        return "SWRPG - Setback";
     }
 
     public getBackgroundColor(): string {
@@ -296,11 +320,11 @@ export class SWRPG_Boost extends DiceBase {
     }
 
     getName(): string {
-        return "SWRPG_Boost";
+        return "SWRPG - Boost";
     }
 
     public getBackgroundColor(): string {
-        return "blue";
+        return "#ABDEF7";
     }
 
     public getSides(): Face[] {

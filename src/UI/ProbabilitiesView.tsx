@@ -2,6 +2,7 @@ import React from "react";
 import { Dice, Face } from "../DiceModel/index";
 import { RandomSeed } from "random-seed";
 import { HistogramChart } from "./HistogramChart";
+import { Spinner } from "office-ui-fabric-react/lib/Spinner";
 
 interface ProbabilitiesViewProps {
     activeDice: Dice[];
@@ -20,6 +21,7 @@ interface RollOutcome {
 interface ProbabilitiesViewState {
     iterations: RollOutcome[];
     histograms: Histogram[];
+    regenerating: boolean;
 }
 
 export class ProbabilitiesView extends React.Component<
@@ -30,7 +32,8 @@ export class ProbabilitiesView extends React.Component<
         super(props);
         this.state = {
             iterations: [],
-            histograms: [{ name: "number", data: [] }],
+            histograms: [],
+            regenerating: false,
         };
     }
 
@@ -50,6 +53,10 @@ export class ProbabilitiesView extends React.Component<
 
     private renderCharts(): JSX.Element[] {
         const elements: JSX.Element[] = [];
+
+        if (this.state.regenerating) {
+            elements.push(<Spinner key={0} />);
+        }
 
         for (const key in this.state.histograms) {
             if (this.state.histograms.hasOwnProperty(key)) {
@@ -85,6 +92,7 @@ export class ProbabilitiesView extends React.Component<
         this.setState({
             iterations: iterations,
             histograms: histograms,
+            regenerating: false,
         });
     }
 

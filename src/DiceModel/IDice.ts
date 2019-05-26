@@ -13,6 +13,7 @@ export interface Dice {
     getName(): string;
     getSides(): Face[];
     roll(randomSeed: RandomSeed): Face;
+    getShape(): string;
     getBackgroundColor(): string;
     getForegroundColor(): string;
 }

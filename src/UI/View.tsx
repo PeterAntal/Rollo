@@ -23,13 +23,14 @@ export class View extends React.Component<any, ViewState> {
         return (
             <>
                 <DicePicker onAdd={this.onAddDice} />
-                <DicePool
+                {/* <DicePool
                     activeDice={this.state.activeDice}
                     onRemove={this.onRemoveDice}
-                />
+                /> */}
                 <DiceRoll
                     activeDice={this.state.activeDice as any}
                     randomSeed={this.state.randomSeed}
+                    onRemove={this.onRemoveDice}
                 />
                 <ProbabilitiesView
                     activeDice={this.state.activeDice as any}

@@ -14,6 +14,10 @@ export abstract class DiceBase implements Dice {
         return "black";
     }
 
+    public getShape(): string {
+        return "square";
+    }
+
     public roll(randomSeed: RandomSeed): Face {
         const options = this.getSides();
         const selection = randomSeed.range(options.length);
