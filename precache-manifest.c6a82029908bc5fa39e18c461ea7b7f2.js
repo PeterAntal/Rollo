@@ -1,18 +1,18 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "92466281999e1be9b206fbf74915fcac",
+    "revision": "c2584d29c92554854788b172deb24543",
     "url": "/Rollo/index.html"
   },
   {
-    "revision": "be812112c504f67d9035",
-    "url": "/Rollo/static/css/main.053e6ee9.chunk.css"
+    "revision": "63de715aaac74c22a1d6",
+    "url": "/Rollo/static/css/main.0827cd4f.chunk.css"
   },
   {
     "revision": "e06640be6b03d8e181e9",
     "url": "/Rollo/static/js/2.538178e7.chunk.js"
   },
   {
-    "revision": "be812112c504f67d9035",
+    "revision": "63de715aaac74c22a1d6",
     "url": "/Rollo/static/js/main.902001db.chunk.js"
   },
   {
