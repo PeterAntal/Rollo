@@ -1,6 +1,6 @@
 import React from "react";
 import { Face, Dice } from "../DiceModel/IDice";
-import { mapGlyph } from "../DiceModel/DieGlyphs";
+import { mapGlyphs } from "../DiceModel/DieGlyphs";
 import "./DiceResult.css";
 import { css } from "@uifabric/utilities";
 import { IconButton } from "office-ui-fabric-react/lib/index";
@@ -47,7 +47,7 @@ export class DiceResult extends React.Component<DiceResultProps> {
 
                 results.push(
                     <span key={key} className={css("value", faceSize)}>
-                        {mapGlyph(key, count)}
+                        {mapGlyphs(key, count)}
                     </span>
                 );
             }

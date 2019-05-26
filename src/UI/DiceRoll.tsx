@@ -3,6 +3,7 @@ import { Dice, Face } from "../DiceModel/index";
 import { RandomSeed } from "random-seed";
 import { DiceResult } from "./DiceResult";
 import { PrimaryButton } from "office-ui-fabric-react";
+import { getGlyph } from "../DiceModel/DieGlyphs";
 import "./DiceRoll.css";
 
 import {
@@ -67,19 +68,20 @@ export class DiceRoll extends React.Component<DiceRollProps, DiceRollState> {
         const results = [];
         for (let dimension = 0; dimension < dimensions.length; dimension++) {
             const dimensionName = dimensions[dimension];
+            const count = getValuesOfDimension(this.state.faces, dimensionName);
             results.push(
                 <div>
-                    <span>{dimensionName} </span>
                     <span>
-                        {getValuesOfDimension(this.state.faces, dimensionName)}
+                        {getGlyph(dimensionName, count)} {dimensionName}{" "}
                     </span>
+                    <span>{count}</span>
                 </div>
             );
         }
         return (
             <div>
                 <br />
-                Outcomes:{results}
+                Outcome Dimensions:{results}
                 <br />
             </div>
         );

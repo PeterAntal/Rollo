@@ -31,12 +31,17 @@ glyphs[force] = (count: number) => {
     return <span className={css("die-glyph", glyph)} />;
 };
 
-export function mapGlyph(identifier: string, value: number): JSX.Element {
+export function getGlyph(identifier: string, value: number): JSX.Element {
+    const glyph = glyphs[identifier];
+    return glyph !== undefined ? repeat(glyph(value), Math.abs(value)) : <></>;
+}
+
+export function mapGlyphs(identifier: string, value: number): JSX.Element {
     const glyph = glyphs[identifier];
     const absValue = Math.abs(value);
     const content =
         glyph !== undefined
-            ? repeat(glyph(value), absValue)
+            ? repeat(glyph(value), absValue, true)
             : absValue.toString();
     return (
         <>
@@ -46,11 +51,15 @@ export function mapGlyph(identifier: string, value: number): JSX.Element {
     );
 }
 
-function repeat(element: JSX.Element, count: number): JSX.Element {
+function repeat(
+    element: JSX.Element,
+    count: number,
+    separate?: boolean
+): JSX.Element {
     const result = [];
     for (let i = 0; i < count; i++) {
         result.push(element);
-        if (i !== count - 1) {
+        if (i !== count - 1 && separate) {
             result.push(<br />);
         }
     }
