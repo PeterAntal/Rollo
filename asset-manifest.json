@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/Rollo/static/css/main.0827cd4f.chunk.css",
-    "main.js": "/Rollo/static/js/main.902001db.chunk.js",
-    "main.js.map": "/Rollo/static/js/main.902001db.chunk.js.map",
+    "main.js": "/Rollo/static/js/main.8b74e184.chunk.js",
+    "main.js.map": "/Rollo/static/js/main.8b74e184.chunk.js.map",
     "runtime~main.js": "/Rollo/static/js/runtime~main.1750d291.js",
     "runtime~main.js.map": "/Rollo/static/js/runtime~main.1750d291.js.map",
-    "static/js/2.538178e7.chunk.js": "/Rollo/static/js/2.538178e7.chunk.js",
-    "static/js/2.538178e7.chunk.js.map": "/Rollo/static/js/2.538178e7.chunk.js.map",
+    "static/js/2.94164192.chunk.js": "/Rollo/static/js/2.94164192.chunk.js",
+    "static/js/2.94164192.chunk.js.map": "/Rollo/static/js/2.94164192.chunk.js.map",
     "index.html": "/Rollo/index.html",
-    "precache-manifest.c6a82029908bc5fa39e18c461ea7b7f2.js": "/Rollo/precache-manifest.c6a82029908bc5fa39e18c461ea7b7f2.js",
+    "precache-manifest.c9f0a962d438cc205ac54d6b01c8ecf4.js": "/Rollo/precache-manifest.c9f0a962d438cc205ac54d6b01c8ecf4.js",
     "service-worker.js": "/Rollo/service-worker.js",
     "static/css/main.0827cd4f.chunk.css.map": "/Rollo/static/css/main.0827cd4f.chunk.css.map",
     "static/media/DieGlyphs.css": "/Rollo/static/media/sw_symbols.a09f3c28.otf"
