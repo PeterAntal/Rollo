@@ -70,7 +70,7 @@ export class DiceRoll extends React.Component<DiceRollProps, DiceRollState> {
             const dimensionName = dimensions[dimension];
             const count = getValuesOfDimension(this.state.faces, dimensionName);
             results.push(
-                <div>
+                <div key={dimension}>
                     <span>
                         {getGlyph(dimensionName, count)} {dimensionName}{" "}
                     </span>

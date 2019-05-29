@@ -28,7 +28,7 @@ glyphs[despair] = (count: number) => {
 
 glyphs[force] = (count: number) => {
     const glyph = count > 0 ? "light-side" : "dark-side";
-    return <span className={css("die-glyph", glyph)} />;
+    return <span key={count} className={css("die-glyph", glyph)} />;
 };
 
 export function getGlyph(identifier: string, value: number): JSX.Element {
@@ -58,9 +58,9 @@ function repeat(
 ): JSX.Element {
     const result = [];
     for (let i = 0; i < count; i++) {
-        result.push(element);
+        result.push(<span key={i}>element</span>);
         if (i !== count - 1 && separate) {
-            result.push(<br />);
+            result.push(<br key={i} />);
         }
     }
     return <>{result}</>;

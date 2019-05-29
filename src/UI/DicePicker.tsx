@@ -5,7 +5,7 @@ import {
     ComboBox,
     IComboBox,
     IComboBoxOption,
-    Button,
+    PrimaryButton,
 } from "office-ui-fabric-react/lib/index";
 
 export interface DiceComboProps {
@@ -79,7 +79,7 @@ export class DicePicker extends React.Component<
                     selected={this.state.selected}
                     onSelect={this.onSelect}
                 />
-                <Button
+                <PrimaryButton
                     label="AddButton"
                     text="Add"
                     onClick={this.onClick}

@@ -3,13 +3,12 @@ import { Dice } from "../DiceModel/index";
 import { RandomSeed } from "random-seed";
 import { HistogramChart } from "./HistogramChart";
 import { Spinner } from "office-ui-fabric-react/lib/Spinner";
+import { Histogram, RollOutcome } from "../DiceModel/RollingModel";
 import {
-    Histogram,
-    RollOutcome,
-    generateRoll,
-    getDimensions,
-    getHistograms,
-} from "../DiceModel/RollingModel";
+    DiceRollOperation,
+    DiceRollParams,
+} from "../OperationModel/DiceRollOperation";
+import { WorkClient } from "../WorkClient";
 
 interface ProbabilitiesViewProps {
     activeDice: Dice[];
@@ -17,7 +16,7 @@ interface ProbabilitiesViewProps {
     iterations: number;
 }
 interface ProbabilitiesViewState {
-    iterations: RollOutcome[];
+    rollOutcomes: RollOutcome[];
     histograms: Histogram[];
     regenerating: boolean;
 }
@@ -29,7 +28,7 @@ export class ProbabilitiesView extends React.Component<
     constructor(props: any) {
         super(props);
         this.state = {
-            iterations: [],
+            rollOutcomes: [],
             histograms: [],
             regenerating: false,
         };
@@ -75,24 +74,21 @@ export class ProbabilitiesView extends React.Component<
         return elements;
     }
 
-    private regenerate() {
-        const iterations = [];
-        for (let index = 0; index < this.props.iterations; index++) {
-            const rollOutCome = generateRoll(
-                this.props.activeDice,
-                this.props.randomSeed
-            );
-            iterations[index] = {
-                rollOutCome: rollOutCome,
-            };
-        }
+    private async regenerate() {
+        const params: DiceRollParams = {
+            diceKinds: this.props.activeDice.map(item => {
+                return item.getKey();
+            }),
+            randomSeed: " 123",
+            iterationsCount: this.props.iterations,
+        };
 
-        const dimensions = getDimensions(iterations);
-        const histograms = getHistograms(iterations, dimensions);
+        const client = WorkClient.getInstance();
+        const result = await client.runOperation(new DiceRollOperation(params));
 
         this.setState({
-            iterations: iterations,
-            histograms: histograms,
+            rollOutcomes: result.rollOutComes,
+            histograms: result.histograms,
             regenerating: false,
         });
     }
