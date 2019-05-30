@@ -5,7 +5,7 @@ import { OperationFactory } from "../OperationModel/OperationFactory";
 import { workerResponse, workerRequest } from "./contracts";
 
 // Worker.ts
-const ctx: Worker = self as any;
+const ctx: Worker = self as any; // eslint-disable-line no-restricted-globals
 
 async function run(request: workerRequest): Promise<workerResponse> {
     const cache = new InMemoryOperationResultCache();

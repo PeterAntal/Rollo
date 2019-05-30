@@ -55,7 +55,7 @@ export class DiceResult extends React.Component<DiceResultProps> {
 
         if (itemCount === 0) {
             results.push(
-                <span className={css("value", "no-items")}>{""} </span>
+                <span key={itemCount} className={css("value", "no-items")} />
             );
         }
         return results;

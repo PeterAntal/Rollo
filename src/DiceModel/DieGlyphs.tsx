@@ -11,22 +11,22 @@ export const force = "force";
 const glyphs: {
     [key: string]: (count: number) => JSX.Element;
 } = {};
-glyphs[advantage] = (count: number) => {
+glyphs[advantage] = (count: number): JSX.Element => {
     const glyph = count > 0 ? "advantage" : "disadvantage";
     return <span className={css("die-glyph", glyph)} />;
 };
-glyphs[success] = (count: number) => {
+glyphs[success] = (count: number): JSX.Element => {
     const glyph = count > 0 ? "success" : "failure";
     return <span className={css("die-glyph", glyph)} />;
 };
-glyphs[triumph] = (count: number) => {
+glyphs[triumph] = (count: number): JSX.Element => {
     return <span className={css("die-glyph", "triumph")} />;
 };
-glyphs[despair] = (count: number) => {
+glyphs[despair] = (count: number): JSX.Element => {
     return <span className={css("die-glyph", "despair")} />;
 };
 
-glyphs[force] = (count: number) => {
+glyphs[force] = (count: number): JSX.Element => {
     const glyph = count > 0 ? "light-side" : "dark-side";
     return <span key={count} className={css("die-glyph", glyph)} />;
 };
@@ -58,9 +58,9 @@ function repeat(
 ): JSX.Element {
     const result = [];
     for (let i = 0; i < count; i++) {
-        result.push(<span key={i}>element</span>);
+        result.push(<span key={i}>{element}</span>);
         if (i !== count - 1 && separate) {
-            result.push(<br key={i} />);
+            result.push(<br key={i + "br"} />);
         }
     }
     return <>{result}</>;
