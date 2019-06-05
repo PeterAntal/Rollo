@@ -8,7 +8,7 @@ import { workerResponse, workerRequest } from "./contracts";
 const ctx: Worker = self as any; // eslint-disable-line no-restricted-globals
 
 async function run(request: workerRequest): Promise<workerResponse> {
-    const cache = new InMemoryOperationResultCache();
+    const cache = InMemoryOperationResultCache.getInstance();
 
     const query = OperationFactory.getInstance().instantiate(
         request.type,
