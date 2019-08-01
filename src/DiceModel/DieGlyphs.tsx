@@ -6,7 +6,8 @@ export const success = "success";
 export const triumph = "triumph";
 export const despair = "despair";
 export const number = "number";
-export const force = "force";
+export const light = "light";
+export const dark = "dark";
 
 const glyphs: {
     [key: string]: (count: number) => JSX.Element;
@@ -25,10 +26,11 @@ glyphs[triumph] = (count: number): JSX.Element => {
 glyphs[despair] = (count: number): JSX.Element => {
     return <span className={css("die-glyph", "despair")} />;
 };
-
-glyphs[force] = (count: number): JSX.Element => {
-    const glyph = count > 0 ? "light-side" : "dark-side";
-    return <span key={count} className={css("die-glyph", glyph)} />;
+glyphs[light] = (count: number): JSX.Element => {
+    return <span key={count} className={css("die-glyph", "light-side")} />;
+};
+glyphs[dark] = (count: number): JSX.Element => {
+    return <span key={count} className={css("die-glyph", "dark-side")} />;
 };
 
 export function getGlyph(identifier: string, value: number): JSX.Element {
