@@ -1,14 +1,14 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "259db93233cb4759fd7198b94e06c98c",
-    "url": "/Rollo/35a2c29b1562ef7d61d3.worker.js"
+    "revision": "065020e13c4d6102f3e752a182edfd8f",
+    "url": "/Rollo/c81b5ccbdd7fa67a33ad.worker.js"
   },
   {
-    "revision": "fdbca8a61e0ee39cf1ee3ed75edc4a10",
+    "revision": "0b152a020997f43f6d0986ecbfbe777b",
     "url": "/Rollo/index.html"
   },
   {
-    "revision": "22295c008d18c1ba067b",
+    "revision": "08bb7a7ad1cb3c9e07ea",
     "url": "/Rollo/static/css/main.5261ae08.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Rollo/static/js/2.813218ae.chunk.js"
   },
   {
-    "revision": "22295c008d18c1ba067b",
-    "url": "/Rollo/static/js/main.bff4b7ba.chunk.js"
+    "revision": "08bb7a7ad1cb3c9e07ea",
+    "url": "/Rollo/static/js/main.ad64d89a.chunk.js"
   },
   {
     "revision": "79ae0e067f066e1af21e",
