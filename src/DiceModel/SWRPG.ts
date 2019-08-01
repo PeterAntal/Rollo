@@ -236,40 +236,40 @@ export class SWRPG_Force extends DiceBase {
     public getSides(): Face[] {
         const set: Face[] = [
             {
-                light: 1,
-            },
-            {
-                dark: 2,
+                dark: 1,
             },
             {
                 dark: 1,
             },
             {
-                light: 2,
+                dark: 1,
             },
             {
                 dark: 1,
             },
             {
-                light: 2,
-            },
-            {
                 dark: 1,
-            },
-            {
-                light: 1,
-            },
-            {
-                dark: 1,
-            },
-            {
-                light: 2,
             },
             {
                 dark: 1,
             },
             {
                 dark: 2,
+            },
+            {
+                light: 1,
+            },
+            {
+                light: 1,
+            },
+            {
+                light: 2,
+            },
+            {
+                light: 2,
+            },
+            {
+                light: 2,
             },
         ];
         return set;
